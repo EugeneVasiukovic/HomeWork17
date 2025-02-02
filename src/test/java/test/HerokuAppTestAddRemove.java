@@ -23,7 +23,7 @@ public class HerokuAppTestAddRemove {
 
         List<WebElement> deleteButtons = driver.findElements(By.xpath("//button[text ()='Delete']"));
 
-        Assert.assertEquals(2,deleteButtons.size());
+        Assert.assertEquals(deleteButtons.size(),2);
         Assert.assertTrue(deleteButtons.get(0).isDisplayed());
         Assert.assertTrue(deleteButtons.get(1).isDisplayed());
         driver.quit();
@@ -40,7 +40,7 @@ public class HerokuAppTestAddRemove {
         List<WebElement> deleteButtons = driver.findElements(By.xpath("//button[text ()='Delete']"));
         deleteButtons.get(1).click();
         deleteButtons = driver.findElements(By.xpath("//button[text ()='Delete']"));
-        Assert.assertEquals(1,deleteButtons.size());
+        Assert.assertEquals(deleteButtons.size(),1);
         driver.quit();
     }
 }

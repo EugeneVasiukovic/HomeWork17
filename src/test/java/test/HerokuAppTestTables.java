@@ -21,12 +21,12 @@ public class HerokuAppTestTables {
         WebElement headerFive = driver.findElement(By.xpath("//table[1]//th[5]"));
         WebElement headerSix = driver.findElement(By.xpath("//table[1]//th[6]"));
 
-        Assert.assertEquals("Last Name", headerOne.getText());
-        Assert.assertEquals("First Name", headerTwo.getText());
-        Assert.assertEquals("Email", headerThree.getText());
-        Assert.assertEquals("Due", headerFour.getText());
-        Assert.assertEquals("Web Site", headerFive.getText());
-        Assert.assertEquals("Action", headerSix.getText());
+        Assert.assertEquals(headerOne.getText(),"Last Name");
+        Assert.assertEquals(headerTwo.getText(),"First Name");
+        Assert.assertEquals(headerThree.getText(),"Email");
+        Assert.assertEquals(headerFour.getText(),"Due");
+        Assert.assertEquals(headerFive.getText(),"Web Site");
+        Assert.assertEquals(headerSix.getText(),"Action");
         driver.quit();
     }
 
@@ -41,11 +41,11 @@ public class HerokuAppTestTables {
         WebElement cellFour = driver.findElement(By.xpath("//table[1]//tr[1]//td[4]"));
         WebElement cellFive = driver.findElement(By.xpath("//table[1]//tr[1]//td[5]"));
 
-        Assert.assertEquals("Smith", cellOne.getText());
-        Assert.assertEquals("John", cellTwo.getText());
-        Assert.assertEquals("jsmith@gmail.com", cellThree.getText());
-        Assert.assertEquals("$50.00", cellFour.getText());
-        Assert.assertEquals("http://www.jsmith.com", cellFive.getText());
+        Assert.assertEquals(cellOne.getText(),"Smith");
+        Assert.assertEquals(cellTwo.getText(),"John");
+        Assert.assertEquals(cellThree.getText(),"jsmith@gmail.com");
+        Assert.assertEquals(cellFour.getText(),"$50.00" );
+        Assert.assertEquals(cellFive.getText(),"http://www.jsmith.com");
         driver.quit();
     }
 }

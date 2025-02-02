@@ -23,7 +23,7 @@ public class HerokuAppTestDropdown {
         String[] mockExpectedOptions = {"Please select an option", "Option 1", "Option 2"};
 
         for (int i = 0; i < mockExpectedOptions.length; i++) {
-            Assert.assertEquals(mockExpectedOptions[i], allElementsDropdown.get(i).getText());
+            Assert.assertEquals(allElementsDropdown.get(i).getText(), mockExpectedOptions[i]);
 
         }
         driver.quit();
@@ -38,7 +38,7 @@ public class HerokuAppTestDropdown {
         Select elementsDropdown = new Select(elemetsDropdownGet);
         elementsDropdown.selectByIndex(1);
         WebElement getFirstElementDropdown = elementsDropdown.getFirstSelectedOption();
-        Assert.assertEquals("Option 1", getFirstElementDropdown.getText());
+        Assert.assertEquals(getFirstElementDropdown.getText(),"Option 1");
         driver.quit();
     }
 
@@ -51,7 +51,7 @@ public class HerokuAppTestDropdown {
         Select elementsDropdown = new Select(elemetsDropdownGet);
         elementsDropdown.selectByIndex(2);
         WebElement getSecondElementDropdown = elementsDropdown.getFirstSelectedOption();
-        Assert.assertEquals("Option 2", getSecondElementDropdown.getText());
+        Assert.assertEquals( getSecondElementDropdown.getText(),"Option 2");
         driver.quit();
     }
 }
