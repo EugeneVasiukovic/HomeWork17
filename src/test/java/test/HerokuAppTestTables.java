@@ -27,7 +27,6 @@ public class HerokuAppTestTables {
         Assert.assertEquals("Due", headerFour.getText());
         Assert.assertEquals("Web Site", headerFive.getText());
         Assert.assertEquals("Action", headerSix.getText());
-
         driver.quit();
     }
 

@@ -27,7 +27,6 @@ public class HerokuAppTestHover {
             WebElement image = images.findElement(By.tagName("img"));
             hoverActions.moveToElement(image).perform();
 
-
             WebElement userNameAll = images.findElement(By.tagName("h5"));
             String userNameOne = userNameAll.getText();
             softAssertions.assertThat(userNameOne).isNotNull().isNotEmpty();
