@@ -37,8 +37,8 @@ public class HerokuAppTestCheckbox {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        List<WebElement> secondCCheckboxChecked = driver.findElements(By.cssSelector("[type=checkbox]"));
-        Assert.assertTrue(secondCCheckboxChecked.get(1).isSelected());
+        List<WebElement> secondCheckboxChecked = driver.findElements(By.cssSelector("[type=checkbox]"));
+        Assert.assertTrue(secondCheckboxChecked.get(1).isSelected());
         driver.quit();
     }
 
