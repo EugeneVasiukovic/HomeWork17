@@ -1,0 +1,28 @@
+package test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import java.util.List;
+
+public class HerokuAppTestTypos {
+
+    @Test
+    public void herokuAppCheckedtestTypos(){
+        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://the-internet.herokuapp.com/typos");
+        List<WebElement> getText = driver.findElements(By.tagName("p"));
+        String actualText = getText.get(0).getText() + "\n\n" + getText.get(1).getText();
+
+        String expectedText = "This example demonstrates a typo being introduced. It does it randomly on each page load.\n\n" +
+                "Sometimes you'll see a typo, other times you won't.";
+
+        Assert.assertEquals(actualText.toString(), expectedText);
+        driver.quit();
+    }
+}
