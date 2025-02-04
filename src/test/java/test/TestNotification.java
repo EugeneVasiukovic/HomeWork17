@@ -13,10 +13,6 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class TestNotification {
-    public void RemovePartText(){
-
-
-    }
 
     @Test
     public void herokuAppTestCheckNotification(){
