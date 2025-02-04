@@ -13,13 +13,13 @@ import java.util.List;
 public class TestAddRemoveButton {
 
     @Test
-    public void checkAddTestButton() {
+    public void checkAddButton() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
         WebElement buttonAdd = driver.findElement(By.xpath("//button[text()='Add Element']"));
-        Actions doubleClickButton = new Actions(driver);
-        doubleClickButton.doubleClick(buttonAdd).perform();
+        Actions doubleClickAction = new Actions(driver);
+        doubleClickAction.doubleClick(buttonAdd).perform();
 
         List<WebElement> deleteButtons = driver.findElements(By.xpath("//button[text()='Delete']"));
 
@@ -29,13 +29,13 @@ public class TestAddRemoveButton {
         driver.quit();
     }
     @Test
-    public void checkRemoveTestButton(){
+    public void checkRemoveButton(){
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
         WebElement buttonAdd = driver.findElement(By.xpath("//button[text()='Add Element']"));
-        Actions doubleClickButton = new Actions(driver);
-        doubleClickButton.doubleClick(buttonAdd).perform();
+        Actions doubleClickAction = new Actions(driver);
+        doubleClickAction.doubleClick(buttonAdd).perform();
 
         List<WebElement> deleteButtons = driver.findElements(By.xpath("//button[text()='Delete']"));
         deleteButtons.get(1).click();

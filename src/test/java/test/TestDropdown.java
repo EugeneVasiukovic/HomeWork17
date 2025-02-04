@@ -20,10 +20,10 @@ public class TestDropdown {
         WebElement dropdown = driver.findElement(By.id("dropdown"));
         Select elementsDropdown = new Select(dropdown);
         List<WebElement> allElementsDropdown = elementsDropdown.getOptions();
-        String[] DropdownOptions = {"Please select an option", "Option 1", "Option 2"};
+        String[] dropdownOptions = {"Please select an option", "Option 1", "Option 2"};
 
-        for (int i = 0; i < DropdownOptions.length; i++) {
-            Assert.assertEquals(allElementsDropdown.get(i).getText(), DropdownOptions[i]);
+        for (int i = 0; i < dropdownOptions.length; i++) {
+            Assert.assertEquals(allElementsDropdown.get(i).getText(), dropdownOptions[i]);
 
         }
         driver.quit();

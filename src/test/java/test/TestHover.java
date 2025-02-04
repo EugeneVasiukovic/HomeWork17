@@ -17,7 +17,6 @@ public class TestHover {
 
     SoftAssertions softAssertions = new SoftAssertions();
 
-
     @Test
     public void testCheckHoverFirstImage(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
