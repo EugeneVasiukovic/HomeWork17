@@ -9,47 +9,47 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class HerokuAppTestCheckbox {
+public class TestCheckbox {
 
     @Test
-    public void herokuAppTestFirstCheckboxUnchecked() {
+    public void TestFirstCheckboxUnchecked() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement firstCheckboxUnchecked = driver.findElement(By.cssSelector("[type=checkbox]"));
-        Assert.assertFalse(firstCheckboxUnchecked.isSelected());
+        WebElement firstCheckbox = driver.findElement(By.cssSelector("[type=checkbox]"));
+        Assert.assertFalse(firstCheckbox.isSelected());
         driver.quit();
     }
 
     @Test
-    public void herokuAppTestFirstCheckboxChecked() {
+    public void TestFirstCheckboxChecked() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement firstCheckboxChecked = driver.findElement(By.cssSelector("[type=checkbox]"));
-        firstCheckboxChecked.click();
-        Assert.assertTrue(firstCheckboxChecked.isSelected());
+        WebElement firstCheckbox = driver.findElement(By.cssSelector("[type=checkbox]"));
+        firstCheckbox.click();
+        Assert.assertTrue(firstCheckbox.isSelected());
         driver.quit();
     }
 
     @Test
-    public void herokuAppTestSecondCheckboxChecked() {
+    public void TestSecondCheckboxChecked() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        List<WebElement> secondCheckboxChecked = driver.findElements(By.cssSelector("[type=checkbox]"));
-        Assert.assertTrue(secondCheckboxChecked.get(1).isSelected());
+        List<WebElement> secondCheckbox = driver.findElements(By.cssSelector("[type=checkbox]"));
+        Assert.assertTrue(secondCheckbox.get(1).isSelected());
         driver.quit();
     }
 
     @Test
-    public void herokuAppTestSecondCheckboxUnChecked() {
+    public void TestSecondCheckboxUnChecked() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        List<WebElement> secondCheckboxChecked = driver.findElements(By.cssSelector("[type=checkbox]"));
-        secondCheckboxChecked.get(1).click();
-        Assert.assertFalse(secondCheckboxChecked.get(1).isSelected());
+        List<WebElement> secondCheckbox = driver.findElements(By.cssSelector("[type=checkbox]"));
+        secondCheckbox.get(1).click();
+        Assert.assertFalse(secondCheckbox.get(1).isSelected());
         driver.quit();
     }
 }

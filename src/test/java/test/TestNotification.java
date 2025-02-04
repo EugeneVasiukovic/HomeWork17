@@ -12,7 +12,11 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class HerokuAppTestNotification {
+public class TestNotification {
+    public void RemovePartText(){
+
+
+    }
 
     @Test
     public void herokuAppTestCheckNotification(){
@@ -25,9 +29,8 @@ public class HerokuAppTestNotification {
         WebDriverWait waitNotification = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement notification = waitNotification.until
                 (ExpectedConditions.visibilityOfElementLocated(By.id("flash")));
-        String expectedResult = "Action successful\n" +
-                "×";
-        String actualResult = notification.getText();
+        String expectedResult = "Action successful";
+        String actualResult = notification.getText().replace("×","").trim();
 
         Assert.assertEquals(actualResult,expectedResult);
         driver.quit();

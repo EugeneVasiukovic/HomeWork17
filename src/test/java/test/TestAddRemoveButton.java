@@ -10,10 +10,10 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class HerokuAppTestAddRemove {
+public class TestAddRemoveButton {
 
     @Test
-    public void HerokuAppAddTest() {
+    public void CheckAddTestButton() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
@@ -21,15 +21,15 @@ public class HerokuAppTestAddRemove {
         Actions doubleClickButton = new Actions(driver);
         doubleClickButton.doubleClick(buttonAdd).perform();
 
-        List<WebElement> deleteButtons = driver.findElements(By.xpath("//button[text ()='Delete']"));
+        List<WebElement> deleteButtons = driver.findElements(By.xpath("//button[text()='Delete']"));
 
-        Assert.assertEquals(deleteButtons.size(),2);
+        Assert.assertEquals(deleteButtons.size(), 2);
         Assert.assertTrue(deleteButtons.get(0).isDisplayed());
         Assert.assertTrue(deleteButtons.get(1).isDisplayed());
         driver.quit();
     }
     @Test
-    public void HerokuAppRemoveTest(){
+    public void CheckRemoveTestButton(){
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
@@ -37,10 +37,10 @@ public class HerokuAppTestAddRemove {
         Actions doubleClickButton = new Actions(driver);
         doubleClickButton.doubleClick(buttonAdd).perform();
 
-        List<WebElement> deleteButtons = driver.findElements(By.xpath("//button[text ()='Delete']"));
+        List<WebElement> deleteButtons = driver.findElements(By.xpath("//button[text()='Delete']"));
         deleteButtons.get(1).click();
-        deleteButtons = driver.findElements(By.xpath("//button[text ()='Delete']"));
-        Assert.assertEquals(deleteButtons.size(),1);
+        deleteButtons = driver.findElements(By.xpath("//button[text()='Delete']"));
+        Assert.assertEquals(deleteButtons.size(), 1);
         driver.quit();
     }
 }
