@@ -16,7 +16,7 @@ public class TestTables {
     SoftAssertions softAssertions = new SoftAssertions();
 
     @Test
-    public void TestCheckHeaderTables() {
+    public void testCheckHeaderTables() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/tables");
@@ -30,7 +30,7 @@ public class TestTables {
     }
 
     @Test
-    public void TestCheckCellTables() {
+    public void testCheckCellTables() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/tables");
@@ -43,7 +43,7 @@ public class TestTables {
         driver.quit();
     }
     @AfterClass
-    public void ResultTest(){
+    public void resultTest(){
         softAssertions.assertAll();
     }
 }

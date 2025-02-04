@@ -19,7 +19,7 @@ public class TestHover {
 
 
     @Test
-    public void TestCheckHoverFirstImage(){
+    public void testCheckHoverFirstImage(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/hovers");
@@ -43,7 +43,7 @@ public class TestHover {
     }
 
     @Test
-    public void TestCheckHoverSecondImage(){
+    public void testCheckHoverSecondImage(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/hovers");
@@ -67,7 +67,7 @@ public class TestHover {
     }
 
     @Test
-    public void TestCheckHoverThirdImage(){
+    public void testCheckHoverThirdImage(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/hovers");

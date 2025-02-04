@@ -13,7 +13,7 @@ import java.util.List;
 public class TestDropdown {
 
     @Test
-    public void TestGetAllElemetsDropdown() {
+    public void testGetAllElemetsDropdown() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/dropdown");
@@ -30,7 +30,7 @@ public class TestDropdown {
     }
 
     @Test
-    public void TestGetFirstElemetsDropdown() {
+    public void testGetFirstElemetsDropdown() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/dropdown");
@@ -43,7 +43,7 @@ public class TestDropdown {
     }
 
     @Test
-    public void TestGetSecondElemetsDropdown() {
+    public void testGetSecondElemetsDropdown() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/dropdown");

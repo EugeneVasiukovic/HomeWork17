@@ -12,7 +12,7 @@ import java.util.List;
 public class TestCheckbox {
 
     @Test
-    public void TestFirstCheckboxUnchecked() {
+    public void testFirstCheckboxUnchecked() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/checkboxes");
@@ -22,7 +22,7 @@ public class TestCheckbox {
     }
 
     @Test
-    public void TestFirstCheckboxChecked() {
+    public void testFirstCheckboxChecked() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/checkboxes");
@@ -33,7 +33,7 @@ public class TestCheckbox {
     }
 
     @Test
-    public void TestSecondCheckboxChecked() {
+    public void testSecondCheckboxChecked() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/checkboxes");
@@ -43,7 +43,7 @@ public class TestCheckbox {
     }
 
     @Test
-    public void TestSecondCheckboxUnChecked() {
+    public void testSecondCheckboxUnChecked() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/checkboxes");

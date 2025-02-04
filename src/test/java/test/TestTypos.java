@@ -12,7 +12,7 @@ import java.util.List;
 public class TestTypos {
 
     @Test
-    public void CheckedTestTypos(){
+    public void checkedTestTypos(){
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/typos");

@@ -13,7 +13,7 @@ import java.util.List;
 public class TestAddRemoveButton {
 
     @Test
-    public void CheckAddTestButton() {
+    public void checkAddTestButton() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
@@ -29,7 +29,7 @@ public class TestAddRemoveButton {
         driver.quit();
     }
     @Test
-    public void CheckRemoveTestButton(){
+    public void checkRemoveTestButton(){
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");

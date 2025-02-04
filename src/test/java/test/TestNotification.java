@@ -15,7 +15,7 @@ import java.time.Duration;
 public class TestNotification {
 
     @Test
-    public void herokuAppTestCheckNotification(){
+    public void testCheckNotification(){
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/notification_message_rendered");
