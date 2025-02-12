@@ -55,7 +55,7 @@ public class FileDownloadTest {
         File downloadedFile = new File(downloadPath + "/some-file.txt");
         boolean isDownloaded = waitForFileToDownload(downloadedFile, 10);
 
-        Assert.assertTrue(isDownloaded, "Файл не был загружен");
+        Assert.assertTrue(isDownloaded);
     }
 
     @BeforeMethod
