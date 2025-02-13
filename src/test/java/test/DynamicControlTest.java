@@ -14,7 +14,6 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
-import java.util.List;
 
 public class DynamicControlTest {
     WebDriver driver;
@@ -39,15 +38,14 @@ public class DynamicControlTest {
     public void checkDynamicControlTest(){
         SoftAssert softAssert = new SoftAssert();
         driver.get("http://the-internet.herokuapp.com/dynamic_controls");
-        List<WebElement> buttonClick = driver.findElements(By.tagName("button"));
-        buttonClick.getFirst().click();
+        driver.findElement(By.xpath("//*[@id=\"checkbox-example\"]/button")).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form//p[text()=\"It's gone!\"]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()=\"It's gone!\"]")));
         boolean checkboxIsNotPresent = isElementNotPresent(driver, By.id("checkbox"));
-        WebElement inputElement = driver.findElement(By.xpath("//input[@type='text']"));
+        WebElement inputElement = driver.findElement(By.xpath("//input"));
         boolean inputIsDisabled = !inputElement.isEnabled();
-        buttonClick.getLast().click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form//p[text()=\"It's enabled!\"]")));
+        driver.findElement(By.xpath("//*[@id=\"input-example\"]/button ")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()=\"It's enabled!\"]")));
         boolean inputIsEnabled = inputElement.isEnabled();
 
         softAssert.assertTrue(checkboxIsNotPresent);

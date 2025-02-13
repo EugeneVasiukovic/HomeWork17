@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -16,7 +17,7 @@ import java.util.Map;
 
 public class FileDownloadTest {
     WebDriver driver;
-    String downloadPath = "C:\\Users\\Yeuheni\\Desktop\\tech my skill\\HomeWork17\\src\\test\\resources";
+    String downloadPath = System.getProperty("user.dir") + "/src/test/resources";
 
     @BeforeMethod
     public void initTest(){
@@ -31,34 +32,35 @@ public class FileDownloadTest {
         driver.manage().window().maximize();
     }
 
-    private boolean waitForFileToDownload(File file, int timeoutInSeconds) {
-        int timeElapsed = 0;
-        while (timeElapsed < timeoutInSeconds) {
-            if (file.exists()) {
-                return true;
-            }
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            timeElapsed++;
-        }
-        return false;
-    }
-
     @Test
     public void checkFileDownloadTest(){
         driver.get("http://the-internet.herokuapp.com/download");
-        WebElement downloadLink = driver.findElement(By.linkText("some-file.txt"));
+        WebElement downloadLink = driver.findElement(By.linkText("test.jpg"));
         downloadLink.click();
-        File downloadedFile = new File(downloadPath + "/some-file.txt");
-        boolean isDownloaded = waitForFileToDownload(downloadedFile, 10);
 
-        Assert.assertTrue(isDownloaded);
+        File folder = new File(downloadPath);
+        File[] listOfFiles = folder.listFiles();
+        boolean found = false;
+        File f = null;
+
+        for (File listOfFile : listOfFiles) {
+            if (listOfFile.isFile()) {
+                String fileName = listOfFile.getName();
+                System.out.println("File: " + listOfFile.getName());
+                if (fileName.matches("test.jpg")) {
+                    f = new File(folder, fileName);
+                    found = true;
+                }
+            }
+        }
+
+        Assert.assertTrue(found);
+        if (f != null) {
+            f.deleteOnExit();
+        }
     }
 
-    @BeforeMethod
+    @AfterMethod
     public void quitDriver(){
         driver.quit();
     }
